@@ -41,7 +41,15 @@ public class CPSC112_Assignment3 {
 
   public static boolean isGuessValid(String input) {
      //Part 2 code goes here
-	 
+	  if (input.length() != 4 || input.charAt(0) == input.charAt(1) || input.charAt(0) == input.charAt(2) || input.charAt(0)  == input.charAt(3) || input.charAt(1) == input.charAt(2) || input.charAt(1) == input.charAt(3) || input.charAt(2) == input.charAt(3))
+	  {
+		  System.out.println("Input must be a 4-digit number with digits between 1 and 7");
+		  return false;
+	  }
+	  else
+	  {
+		  return true;
+	  }
   }
 
   public static boolean isGameOver(String input) {

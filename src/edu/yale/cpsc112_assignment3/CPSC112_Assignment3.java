@@ -18,11 +18,27 @@ public class CPSC112_Assignment3 {
 
   public static void makeMySecret() {
      // Part 1 code goes here (please leave the next few lines at the end of the makeMySecret method)
-    if (DEBUG)
-    {
+	  int i = 0,j = 0,k = 0,l = 0;
+   	  i = r.nextInt(7)+1;
+   	  j = r.nextInt(7)+1;
+   	  k = r.nextInt(7)+1;
+   	  l = r.nextInt(7)+1;
+   	  while (j == i){
+   	  j = r.nextInt(7)+1;
+   	  }
+   	  while (k == i || k ==j){
+   	  k = r.nextInt(7)+1;
+   	  }
+   	  while (l == i || l == j || l == k){
+   	  l = r.nextInt(7)+1;
+   	  }
+   	  mySecret = "" + i + j + k + l;
+   	  if (DEBUG)
+   	  {
        System.out.println(mySecret);
+   	  }
     }
-  }
+  
 
   public static boolean isGuessValid(String input) {
     // Part 2 code goes here

@@ -69,5 +69,45 @@ public class CPSC112_Assignment3 {
 
   public static boolean isGameOver(String input) {
     // Parts 3 and 4 code goes here
+	  int correctP = 0;
+	  int common = 0;	  
+	  if (isGuessValid(input) == false)
+	  {
+		  return false;
+	  }
+	  else
+	  {
+		  if (input == mySecret)
+		  {
+			  System.out.println("You won!");
+			  return true;
+		  }
+		  else 
+		  {
+			 for (int i = 0; i<=3; i++)
+			 {
+			  if (input.charAt(i) == mySecret.charAt(i))
+			  {
+				  correctP += 1;
+			  }
+			 }
+			for (int i = 0; i<=3; i++)
+			{
+				int secret = mySecret.charAt(i);
+				for (int j = 0; j<=3; j++)
+				{
+					int guess = input.charAt(j);
+					if (secret == guess)
+					{
+						common += 1;
+					}
+				}
+			}
+			 System.out.println("Guess: " + input + "; Result: " + common + "," + correctP);
+			 return false;
+		  }
+		  
+		  
+	  }
   }
 }

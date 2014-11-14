@@ -18,21 +18,6 @@ public class CPSC112_Assignment3 {
 
   public static void makeMySecret() {
      // Part 1 code goes here (please leave the next few lines at the end of the makeMySecret method)
-	  int i = 0,j = 0,k = 0,l = 0;
-	  i = r.nextInt(7)+1;
-	  j = r.nextInt(7)+1;
-	  k = r.nextInt(7)+1;
-	  l = r.nextInt(7)+1;
-	  while (j == i){
-	  j = r.nextInt(7)+1;
-	  }
-	  while (k == i || k ==j){
-	  k = r.nextInt(7)+1;
-	  }
-	  while (l == i || l == j || l == k){
-	  l = r.nextInt(7)+1;
-	  }
-	  mySecret = "" + i + j + k + l;
     if (DEBUG)
     {
        System.out.println(mySecret);
@@ -40,59 +25,10 @@ public class CPSC112_Assignment3 {
   }
 
   public static boolean isGuessValid(String input) {
-     //Part 2 code goes here
-	  if (input.length() != 4 || input.charAt(0) == input.charAt(1) || input.charAt(0) == input.charAt(2) || input.charAt(0)  == input.charAt(3) || input.charAt(1) == input.charAt(2) || input.charAt(1) == input.charAt(3) || input.charAt(2) == input.charAt(3))
-	  {
-		  System.out.println("Input must be a 4-digit number with digits between 1 and 7");
-		  return false;
-	  }
-	  else
-	  {
-		  return true;
-	  }
+    // Part 2 code goes here
   }
 
   public static boolean isGameOver(String input) {
     // Parts 3 and 4 code goes here
-	  int correctP = 0;
-	  int common = 0;	  
-	  if (isGuessValid(input) == false)
-	  {
-		  return false;
-	  }
-	  else
-	  {
-		  if (input == mySecret)
-		  {
-			  System.out.println("You won!");
-			  return true;
-		  }
-		  else 
-		  {
-			 for (int i = 0; i<=3; i++)
-			 {
-			  if (input.charAt(i) == mySecret.charAt(i))
-			  {
-				  correctP += 1;
-			  }
-			 }
-			for (int i = 0; i<=3; i++)
-			{
-				int secret = mySecret.charAt(i);
-				for (int j = 0; j<=3; j++)
-				{
-					int guess = input.charAt(j);
-					if (secret == guess)
-					{
-						common += 1;
-					}
-				}
-			}
-			 System.out.println("Guess: " + input + "; Result: " + common + "," + correctP);
-			 return false;
-		  }
-		  
-		  
-	  }
   }
 }

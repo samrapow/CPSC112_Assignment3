@@ -42,6 +42,29 @@ public class CPSC112_Assignment3 {
 
   public static boolean isGuessValid(String input) {
     // Part 2 code goes here
+		try 
+		{
+		int a = Integer.parseInt(input.substring(0,1));
+		int b = Integer.parseInt(input.substring(1,2));
+		int c = Integer.parseInt(input.substring(2,3));
+		int d = Integer.parseInt(input.substring(3,4));
+		  
+		  if (input.length() != 4 || a == b || a == c || a  == d || b == c || b == d || c == d || a > 7 || b > 7 || c > 7 || d > 7 || a < 1|| b < 1 || c < 1 || d < 1)
+		  {
+			  System.out.println("Input must be a 4-digit number with digits between 1 and 7.");
+			  return false;
+		  }
+		  
+		  else
+		  {
+			  return true;
+		  }
+		}
+		catch (Exception e)
+		{
+			System.out.println("Input must be a 4-digit number with digits between 1 and 7.");
+			  return false;
+		}
   }
 
   public static boolean isGameOver(String input) {
